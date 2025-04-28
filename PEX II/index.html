@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABM - Personalizados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://github.com/VictoriaKamilly/ABM_portfolio/blob/main/images/favicon.png?raw=true">
+
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="https://github.com/VictoriaKamilly/ABM_portfolio/blob/main/images/favicon.png?raw=true" alt="Logo do ABM">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Principal (Home) -->
+  <section class="home">
+    <h1>Bem-vindo a ABM Personalizados</h1>
+    <br><br>
+    <h1>Sobre mim</h1>
+    <p>
+      Sou Ana Cristina Pereira de Brito, formada em Jornalismo pela UEPB na década de 90 e com aproximadamente 18 anos de experiência como gerente de hotel em Campina Grande, decidiu seguir seu próprio caminho empreendendo no mercado criativo em 2016. Com foco na produção de itens personalizados, começou com canecas, expandindo rapidamente para copos, camisas e outros produtos, incluindo artigos de papelaria e acessórios feitos por sublimação. Ao longo de sua jornada, investiu em novas tecnologias e aprimorou suas técnicas de produção, como a costura e o uso de equipamentos como a Silhouette e impressoras especializadas. Sua experiência no setor de hospitalidade a ajudou a oferecer um atendimento personalizado, o que se reflete no carinho e atenção aos detalhes de seus produtos, fazendo de seu negócio uma verdadeira paixão pela personalização e pela qualidade
+    </p>
+  </section>
+
+  <!-- Formulário de Contato -->
+  <section class="contato">
+    <h2>Entre em Contato Conosco</h2>
+    <br><br>
+    <p>Telefone: <a href="https://wa.me/c/558387652874"> +55 83 8765-2874 </a></p>
+    <br>
+    <p>Email: abmpresentes@gmail.com</p>
+    <br>
+    <p>Instagram: <a href="https://www.instagram.com/abmpersonalizadoscg/?igsh=MWZlemY2Zzd4dW5pMA%3D%3D">@ABMPERSONALIZADOSCG</a></p>
+    <br><br>
+
+    <form id="contactForm">
+        <h2>Deixe sua Solicitação Abaixo</h2>
+        <br>
+        <input type="text" id="name" placeholder="Seu Nome" required>
+        <input type="email" id="email" placeholder="Seu Email" required>
+        <textarea id="message" placeholder="Sua Mensagem" required></textarea>
+        <button type="submit" class="btn"> Enviar Mensagem </button> 
+      </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 ABM - Personalizados. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    async function carregarPerfil() {
+      const resposta = await fetch('http://localhost:3000/api/perfil');
+      const perfil = await resposta.json();
+  
+      document.querySelector('.home h1').innerText = `Bem-vindo à ${perfil.nome}`;
+      
+      const sobreMimTexto = `
+        ${perfil.bio}<br><br>
+        Email: ${perfil.email}<br>
+        Telefone: ${perfil.telefone}
+      `;
+      document.querySelector('.home p').innerHTML = sobreMimTexto;
+    }
+  
+    carregarPerfil();
+  </script>
+  
+</body>
+</html>

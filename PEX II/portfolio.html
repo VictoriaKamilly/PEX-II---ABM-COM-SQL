@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABM - Portfólio </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://github.com/VictoriaKamilly/ABM_portfolio/blob/main/images/favicon.png?raw=true">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!--<img src="/images/favicon.png" alt="Logo do ABM">-->
+      <img src="https://github.com/VictoriaKamilly/ABM_portfolio/blob/main/images/favicon.png?raw=true" alt="Logo do ABM">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <section class="portfolio">
+  
+  </section>
+</main>
+  <footer>
+    <p>&copy; 2024 ABM - Personalizados. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    async function carregarProjetos() {
+      const resposta = await fetch('http://localhost:3000/api/projetos');
+      const projetos = await resposta.json();
+      
+      const portfolioSection = document.querySelector('.portfolio');
+      portfolioSection.innerHTML = '';
+  
+      projetos.forEach(projeto => {
+        const projetoHTML = `
+          <div class="projeto">
+            <img src="${projeto.imagem_capa_url}" alt="${projeto.titulo}">
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+          </div>
+        `;
+        portfolioSection.innerHTML += projetoHTML;
+      });
+    }
+  
+    carregarProjetos();
+  </script>
+  
+  

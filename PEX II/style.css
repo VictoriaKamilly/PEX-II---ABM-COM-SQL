@@ -1,0 +1,167 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFAF0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+  }
+
+  .home {
+    text-align: center;
+    color: #928d59;
+  }
+  
+  header {
+    background-color:	#FDF5E6; 
+    padding: 20px 0;
+  }
+  
+  header .logo img {
+    width: 150px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 20px;
+  }
+  
+  nav ul li a {
+    color: #BDB76B;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  main {
+    margin: 20px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 20px;
+    flex-grow: 1; /* Faz com que a seção ocupe o restante da altura disponível */
+    background-color: #FDF5E6;
+  }
+
+  h3 {
+    text-align: center;
+    color:#BDB76B;
+  }
+  
+  .home {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha verticalmente os itens ao centro */
+    align-items: center; /* Alinha horizontalmente os itens ao centro */
+    flex-grow: 1; /* Garante que a seção ocupe o restante do espaço */
+  }
+  
+  .contato {
+    text-align: center;
+    color: #BDB76B;
+  }
+
+  .contato p{
+    text-align: center;
+    color: #928d59;
+
+  }
+  .home h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #BDB76B; 
+  }
+  
+  .btn {
+    background-color: #FFFAF0;
+    color: #BDB76B;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block; /* Faz o botão se ajustar ao conteúdo */
+    cursor: pointer;
+    border: 1px solid #FFD700;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #FDF5E6;
+    color: #BDB76B;
+  }
+  
+  .portfolio {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #FDF5E6;
+  }
+
+  .portfolio p {
+    text-align: center;
+    color:#928d59;
+  }
+
+  a {
+    color:#FFD700;
+  }
+  
+  .projeto {
+    background-color: #FFFAF0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(51, 51, 49, 0.3);
+  }
+  
+  .projeto img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    height: 150px;
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin-bottom: 10px;
+    }
+  
+    .home {
+      padding: 30px 20px;
+    }
+  
+    .projeto {
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+  
